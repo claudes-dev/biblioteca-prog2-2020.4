@@ -73,4 +73,11 @@ public class Livro {
 		this.id = id;
 	}
 
+	public long getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(long quantidade) {
+		this.quantidade = quantidade;
+	}
 }
