@@ -1,4 +1,4 @@
-package br.com.ufrpe.biblioteca.controller;
+package br.com.ufrpe.biblioteca.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

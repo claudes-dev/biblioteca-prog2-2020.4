@@ -1,4 +1,4 @@
-package br.com.ufrpe.biblioteca.controller;
+package br.com.ufrpe.biblioteca.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class EventoController {
 	
-	@RequestMapping("/cadastrarEvento")
+	@RequestMapping("/cadastrar")
 	public String form() {
-		return "Evento/formEvento";
+		return "evento/formEvento";
 	}
 
 }
