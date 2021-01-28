@@ -1,12 +1,26 @@
-package model;
+package br.com.ufrpe.biblioteca.domain.model;
 
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "TB_EMPRESTIMO")
 public class Emprestimo {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private int id_cliente;
-	private int id_livro;
-	private String data_emprestimo;
-	private String data_devolucao;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_livro")
+	private Livro livro;
+
+	private Date dataEmprestimo;
+	private Date dataDevolucao;
 
 	public int getId() {
 		return id;
@@ -16,36 +30,35 @@ public class Emprestimo {
 		this.id = id;
 	}
 
-	public int getId_cliente() {
-		return id_cliente;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setId_cliente(int id_cliente) {
-		this.id_cliente = id_cliente;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getId_livro() {
-		return id_livro;
+	public Livro getLivro() {
+		return livro;
 	}
 
-	public void setId_livro(int id_livro) {
-		this.id_livro = id_livro;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
-	public String getData_emprestimo() {
-		return data_emprestimo;
+	public Date getDataEmprestimo() {
+		return dataEmprestimo;
 	}
 
-	public void setData_emprestimo(String data_emprestimo) {
-		this.data_emprestimo = data_emprestimo;
+	public void setDataEmprestimo(Date dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
 	}
 
-	public String getData_devolucao() {
-		return data_devolucao;
+	public Date getDataDevolucao() {
+		return dataDevolucao;
 	}
 
-	public void setData_devolucao(String data_devolucao) {
-		this.data_devolucao = data_devolucao;
+	public void setDataDevolucao(Date dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
 	}
-
 }

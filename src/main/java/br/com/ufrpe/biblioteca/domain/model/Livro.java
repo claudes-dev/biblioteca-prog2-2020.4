@@ -1,9 +1,13 @@
-package model;
+package br.com.ufrpe.biblioteca.domain.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "TB_LIVRO")
 public class Livro {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nome;
 	private String autor;
@@ -11,6 +15,7 @@ public class Livro {
 	private String editora;
 	private Date anoPublicacao;
 	private String disponibilidade;
+	private long quantidade;
 
 	public String getNome() {
 		return nome;
@@ -68,4 +73,11 @@ public class Livro {
 		this.id = id;
 	}
 
+	public long getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(long quantidade) {
+		this.quantidade = quantidade;
+	}
 }
