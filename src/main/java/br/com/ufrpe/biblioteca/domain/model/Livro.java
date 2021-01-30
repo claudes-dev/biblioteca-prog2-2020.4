@@ -1,5 +1,7 @@
 package br.com.ufrpe.biblioteca.domain.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,6 +15,9 @@ public class Livro {
 	private String autor;
 	private String genero;
 	private String editora;
+
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date anoPublicacao;
 	private String disponibilidade;
 	private long quantidade;

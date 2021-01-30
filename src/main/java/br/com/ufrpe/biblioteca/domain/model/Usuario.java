@@ -1,5 +1,7 @@
 package br.com.ufrpe.biblioteca.domain.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,11 +17,13 @@ public class Usuario {
 
     private String email;
 
-   private Date dataNascimento;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dataNascimento;
 
-   private String tipoUsuario;
+    private String tipoUsuario;
 
-   private String cpf;
+    private String cpf;
 
     public long getId() {
         return id;
