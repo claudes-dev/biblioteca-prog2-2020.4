@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class IndexController {
+public class RegistrarController {
 	
-	@RequestMapping("/")
-	public String index() {
-		return "evento/index";
+	@RequestMapping("/registrar")
+	public String form() {
+		return "evento/registrar";
 	}
 
 }
