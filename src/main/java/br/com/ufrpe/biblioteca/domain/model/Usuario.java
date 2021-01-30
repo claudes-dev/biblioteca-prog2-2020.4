@@ -24,7 +24,23 @@ public class Usuario {
     private String tipoUsuario;
 
     private String cpf;
+    
+    private String senha;
 
+    public Usuario () {
+    	
+    }
+    
+    public Usuario(String nome, String email, Date dataNascimento, String tipoUsuario, String cpf, String senha) {
+    	this.nome=nome;
+    	this.email=email;
+    	this.dataNascimento=dataNascimento;
+    	this.tipoUsuario=tipoUsuario;
+    	this.cpf=cpf;
+    	this.senha=senha;
+    	
+    } 
+    
     public long getId() {
         return id;
     }
@@ -72,4 +88,12 @@ public class Usuario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 }
