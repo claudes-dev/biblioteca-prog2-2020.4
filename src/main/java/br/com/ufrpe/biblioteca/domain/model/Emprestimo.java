@@ -1,5 +1,7 @@
 package br.com.ufrpe.biblioteca.domain.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -19,7 +21,12 @@ public class Emprestimo {
 	@JoinColumn(name = "id_livro")
 	private Livro livro;
 
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataEmprestimo;
+
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataDevolucao;
 
 	public int getId() {
