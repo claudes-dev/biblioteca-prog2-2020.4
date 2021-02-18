@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="https://www.ultrap.net.nz/thymeleaf/layout" lang="pt-br">
+
 <head>
 	<title>Login</title>
 </head>
+
 <body>
+
 	<div id="login-container">
-	<h1>Login</h1>
-	
-	<form action="">
-		<label for="email">E-mail</label>
-		<input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-		<label for="password">Senha</label>
-		<input type="password" name="password" id="password" placeholder="Digite sua senha">	
-		<a href="#" id="forgot-pass">Esqueceu a senha?</a>
-		<input type="submit" value="Login">
-	</form>
+		<h1>Login</h1>
+		<form th:action="@{/login/entrar}"  method="POST">
+			<label for="email">E-mail</label>
+			<input name="email" id="email" placeholder="Digite seu e-mail">
+			<label for="senha">Senha</label>
+			<input name="senha" id="senha" placeholder="Digite sua senha" type="senha">
+			<a href="#" id="forgot-pass">Esqueceu a senha?</a>
+			<input type="submit" value="Login">
+		</form>
 	</div>
+
 	<div id="register-container">
-		<p>Ainda não tem uma conta?</p>
+		<p>Ainda nï¿½o tem uma conta?</p>
 		<a href="#">Registrar</a>
 	</div>
 	<!--form method="post">
